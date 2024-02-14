@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+function Header() {
+  return <h1 style={{color:"blue"}}>React Course</h1>;
+}
+
+function Footer() {
+  return <p>Happy Coding</p>;
+}
+
+function MainBody() {
+  return (
+    <div>
+      <p>in this course, we will learn react js by Building Taskopedia</p>
+      <ul>
+        <li>Call Ben</li>
+        <li>Go to walmert</li>
+      </ul>
+    </div>
+  );
+}
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <div>
+    <Header />
+    <MainBody />
+    <Footer />
+  </div>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ 
