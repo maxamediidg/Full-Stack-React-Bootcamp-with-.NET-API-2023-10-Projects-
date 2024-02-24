@@ -9,6 +9,36 @@ import FavouriteContact from "./FavouriteContact";
 
 
 class Contactindex extends React.Component {
+   
+   constructor(props){
+   super(props);
+   this.state={
+       contactList:[
+        {
+        id:1,
+        name:"Ben parker",
+        phone:"666-666-7770",
+        email:"benparker@gmail.com",
+        isFavourite:false,
+       },
+       {
+        id:1,
+        name:"kathy parker",
+        phone:"111-222-0000",
+        email:"kathyparker@gmail.com",
+        isFavourite:true,
+       },
+       {
+        id:1,
+        name:"Paul show",
+        phone:"999-222-1111",
+        email:"Paul@gmail.com",
+        isFavourite:true,
+       },
+    ],
+   };
+   }
+   
     render()
     {
         return(
@@ -26,10 +56,10 @@ class Contactindex extends React.Component {
                <AddContact />
             </div>
             <div className="row py-2">
-               <FavouriteContact />
+               <FavouriteContact contacts={this.state.contactList.filter((u)=>u.isFavourite == true)} />
             </div>
             <div className="row py-2">
-               <GeneralContact />
+               <GeneralContact  contacts={this.state.contactList.filter((u)=>u.isFavourite == false)} /> />
             </div>
         </div>
 
